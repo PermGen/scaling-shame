@@ -35,7 +35,20 @@
                 </div>
             </div>
             <br>
-            <!-- Last Name -->
+            <!-- Middle Name -->
+            <div class="control-group {{ $errors->has('middle-name') ? 'has-error' : '' }}">
+                <label class="control-label" for="middle-name">Middle Name</label>
+
+                <div class="controls">
+                    {{ Form::text('middle_name', null, array('class'=>'form-control', 'id' => 'middle_name', 'placeholder'=>'Middle Name', 'value'=>Input::old('middle_name'))) }}
+                    @if ($errors->first('middle-name'))
+                    <span class="help-block">{{ $errors->first('middle-name') }}</span>
+                    @endif
+                </div>
+            </div>
+            <br>
+
+              <!-- Last Name -->
             <div class="control-group {{ $errors->has('last-name') ? 'has-error' : '' }}">
                 <label class="control-label" for="last-name">Last Name</label>
 
@@ -47,6 +60,114 @@
                 </div>
             </div>
             <br>
+
+              <!-- Gender -->
+            <div class="control-group {{ $errors->has('gender') ? 'has-error' : '' }}">
+                <label class="control-label" for="gender">Gender</label>
+
+                <div class="controls">
+                    {{ Form::text('gender', null, array('class'=>'form-control', 'id' => 'gender', 'placeholder'=>'Gender', 'value'=>Input::old('gender'))) }}
+                    @if ($errors->first('gender'))
+                    <span class="help-block">{{ $errors->first('gender') }}</span>
+                    @endif
+                </div>
+            </div>
+            <br>
+
+              <!-- Date of birth  -->
+            <div class="control-group {{ $errors->has('birth-date') ? 'has-error' : '' }}">
+                <label class="control-label" for="birth-date">Birth Date</label>
+
+                <div class="controls">
+                    {{ Form::text('birth_date', null, array('class'=>'form-control', 'id' => 'birth_date', 'placeholder'=>'Birth Date', 'value'=>Input::old('birth_date'))) }}
+                    @if ($errors->first('birth-date'))
+                    <span class="help-block">{{ $errors->first('birth-date') }}</span>
+                    @endif
+                </div>
+            </div>
+            <br>
+              <!-- Year Graduated -->
+            <div class="control-group {{ $errors->has('year-graduated') ? 'has-error' : '' }}">
+                <label class="control-label" for="year-graduated">Year Graduated</label>
+
+                <div class="controls">
+                    {{ Form::text('year_graduated', null, array('class'=>'form-control', 'id' => 'year_graduated', 'placeholder'=>'Year Graduated', 'value'=>Input::old('year_graduated'))) }}
+                    @if ($errors->first('year-graduated'))
+                    <span class="help-block">{{ $errors->first('year-graduated') }}</span>
+                    @endif
+                </div>
+            </div>
+            <br>
+
+                <!-- Civil Stat -->
+            <div class="control-group {{ $errors->has('civil-stat') ? 'has-error' : '' }}">
+                <label class="control-label" for="civil-stat">Civil Status</label>
+
+                <div class="controls">
+                    {{ Form::text('civil_stat', null, array('class'=>'form-control', 'id' => 'civil_stat', 'placeholder'=>'Civil Status', 'value'=>Input::old('civil_stat'))) }}
+                    @if ($errors->first('civil-stat'))
+                    <span class="help-block">{{ $errors->first('civil_stat') }}</span>
+                    @endif
+                </div>
+            </div>
+            <br>
+
+
+
+              <!-- Address -->
+            <div class="control-group {{ $errors->has('address') ? 'has-error' : '' }}">
+                <label class="control-label" for="address">Address</label>
+
+                <div class="controls">
+                    {{ Form::text('address', null, array('class'=>'form-control', 'id' => 'address', 'placeholder'=>'Address', 'value'=>Input::old('address'))) }}
+                    @if ($errors->first('address'))
+                    <span class="help-block">{{ $errors->first('address') }}</span>
+                    @endif
+                </div>
+            </div>
+            <br>
+
+              <!-- Company -->
+            <div class="control-group {{ $errors->has('company') ? 'has-error' : '' }}">
+                <label class="control-label" for="company">Company</label>
+
+                <div class="controls">
+                    {{ Form::text('company', null, array('class'=>'form-control', 'id' => 'company', 'placeholder'=>'Company', 'value'=>Input::old('Company'))) }}
+                    @if ($errors->first('company'))
+                    <span class="help-block">{{ $errors->first('company') }}</span>
+                    @endif
+                </div>
+            </div>
+            <br>
+
+              <!-- Company   add -->
+            <div class="control-group {{ $errors->has('company-address') ? 'has-error' : '' }}">
+                <label class="control-label" for="company_address">Company Address</label>
+
+                <div class="controls">
+                    {{ Form::text('company_address', null, array('class'=>'form-control', 'id' => 'company_address', 'placeholder'=>'Company Address', 'value'=>Input::old('company_address'))) }}
+                    @if ($errors->first('company-address'))
+                    <span class="help-block">{{ $errors->first('company-address') }}</span>
+                    @endif
+                </div>
+            </div>
+            <br>
+
+              <!-- Nature of job-->
+            <div class="control-group {{ $errors->has('job-nature') ? 'has-error' : '' }}">
+                <label class="control-label" for="last-name">Nature of Job</label>
+
+                <div class="controls">
+                    {{ Form::text('job_nature', null, array('class'=>'form-control', 'id' => 'job_nature', 'placeholder'=>'Nature of Job', 'value'=>Input::old('job_nature'))) }}
+                    @if ($errors->first('job-nature'))
+                    <span class="help-block">{{ $errors->first('job-nature') }}</span>
+                    @endif
+                </div>
+            </div>
+            <br>
+
+          
+
             <!-- Email -->
             <div class="control-group {{ $errors->has('email') ? 'has-error' : '' }}">
                 <label class="control-label" for="email">Email</label>
@@ -59,8 +180,8 @@
                 </div>
             </div>
             <br>
-            <legend>Password</legend>
-            <!-- Password -->
+
+                      <!-- Password -->
             <div class="control-group {{ $errors->has('password') ? 'has-error' : '' }}">
                 <label class="control-label" for="password">Password</label>
 
@@ -81,6 +202,14 @@
                     @if ($errors->first('confirm-password'))
                     <span class="help-block">{{ $errors->first('confirm-password') }}</span>
                     @endif
+                </div>
+            </div>
+            <br>
+
+               <div class="control-group">
+                
+                <div class="controls">
+                    <button class="btn btn-primary">Register</button>
                 </div>
             </div>
             <br>
