@@ -38,13 +38,15 @@ Route::group((Config::get('sfcms')['cache']) ? array('before' => 'cache.fetch', 
     // rss
     Route::get('/rss', array('as' => 'rss', 'uses' => 'RssController@index'));
 
-    //registration
-    Route::get('/registration',array('as' =>'registration','uses'=>'RegistrationController@index'));
 
     // search
     Route::get('/search', ['as'=>'admin.search', 'uses'=>'SearchController@index']);
 
     //registration
+    Route::get('/registration',array('as' =>'registration','uses'=>'RegistrationController@index'));
+
+    //login
+    Route::get('login',array('as'=>'login','uses'=>'LoginController@index'));
 
 });
 
