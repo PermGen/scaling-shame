@@ -47,11 +47,12 @@ class RegistrationController extends BaseController {
 
 
         $validation = Validator::make($formData, $rules);
-       
+
 
         if ($validation->fails()) {
 
             return Redirect::back()->withErrors($validation)->withInput();
+        	
         }
     }
 }

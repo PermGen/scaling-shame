@@ -42,13 +42,15 @@ Route::group((Config::get('sfcms')['cache']) ? array('before' => 'cache.fetch', 
     // search
     Route::get('/search', ['as'=>'admin.search', 'uses'=>'SearchController@index']);
 
-    //registration
-    Route::get('/registration',array('as' =>'registration','uses'=>'RegistrationController@index'));
-
+   
     //login
     Route::get('login',array('as'=>'login','uses'=>'LoginController@index'));
 
 });
+
+ //registration
+    Route::get('/registration',array('as' =>'registration','uses'=>'RegistrationController@index'));
+
 
 Route::post('/contact', array('as' => 'dashboard.contact.post', 'uses' => 'FormPostController@postContact'), array('before' => 'csrf'));
 

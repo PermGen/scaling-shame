@@ -21,6 +21,8 @@
             <br>
             <br>
             <br>
+         
+
             {{ Form::open(array('url' => URL::to('register'),'method'=>'POST')) }}
 
             <!-- First Name -->
