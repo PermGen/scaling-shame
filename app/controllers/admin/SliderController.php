@@ -27,6 +27,7 @@ class SliderController extends BaseController {
         $this->width = $config['modules']['slider']['image_size']['width'];
         $this->height = $config['modules']['slider']['image_size']['height'];
         $this->imgDir = $config['modules']['slider']['image_dir'];
+       
     }
 
     /**

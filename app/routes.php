@@ -52,6 +52,9 @@ Route::group((Config::get('sfcms')['cache']) ? array('before' => 'cache.fetch', 
 
 Route::post('/contact', array('as' => 'dashboard.contact.post', 'uses' => 'FormPostController@postContact'), array('before' => 'csrf'));
 
+// register
+
+Route::post('register',array('uses'=>'RegistrationController@store'));
 /*
 |--------------------------------------------------------------------------
 | Backend Routes

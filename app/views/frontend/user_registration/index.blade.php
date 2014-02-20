@@ -21,7 +21,7 @@
             <br>
             <br>
             <br>
-            {{ Form::open(array('action' => 'App\Controllers\Admin\UserController@store')) }}
+            {{ Form::open(array('url' => URL::to('register'),'method'=>'POST')) }}
 
             <!-- First Name -->
             <div class="control-group {{ $errors->has('first-name') ? 'has-error' : '' }}">
@@ -36,7 +36,7 @@
             </div>
             <br>
             <!-- Middle Name -->
-            <div class="control-group {{ $errors->has('middle-name') ? 'has-error' : '' }}">
+            <div class="control-group {{$errors->has('middle-name') ? 'has-error' : '' }}">
                 <label class="control-label" for="middle-name">Middle Name</label>
 
                 <div class="controls">
@@ -66,7 +66,12 @@
                 <label class="control-label" for="gender">Gender</label>
 
                 <div class="controls">
-                    {{ Form::text('gender', null, array('class'=>'form-control', 'id' => 'gender', 'placeholder'=>'Gender', 'value'=>Input::old('gender'))) }}
+                    <div class="radio">
+                        {{ Form::radio('gender','MALE') }}MALE
+                    </div>
+                   <div class="radio"> 
+                        {{ Form::radio('gender','FEMALE') }}FEMALE
+                   </div>
                     @if ($errors->first('gender'))
                     <span class="help-block">{{ $errors->first('gender') }}</span>
                     @endif
@@ -79,7 +84,7 @@
                 <label class="control-label" for="birth-date">Birth Date</label>
 
                 <div class="controls">
-                    {{ Form::text('birth_date', null, array('class'=>'form-control', 'id' => 'birth_date', 'placeholder'=>'Birth Date', 'value'=>Input::old('birth_date'))) }}
+                    <input type="date"  class="form-control" name="birth_date" placeholder="Birth Date">
                     @if ($errors->first('birth-date'))
                     <span class="help-block">{{ $errors->first('birth-date') }}</span>
                     @endif
@@ -91,7 +96,7 @@
                 <label class="control-label" for="year-graduated">Year Graduated</label>
 
                 <div class="controls">
-                    {{ Form::text('year_graduated', null, array('class'=>'form-control', 'id' => 'year_graduated', 'placeholder'=>'Year Graduated', 'value'=>Input::old('year_graduated'))) }}
+                  <input type="date" class="form-control" name="year_graduated" placeholder="Year Graduated">
                     @if ($errors->first('year-graduated'))
                     <span class="help-block">{{ $errors->first('year-graduated') }}</span>
                     @endif
@@ -132,7 +137,7 @@
                 <label class="control-label" for="company">Company</label>
 
                 <div class="controls">
-                    {{ Form::text('company', null, array('class'=>'form-control', 'id' => 'company', 'placeholder'=>'Company', 'value'=>Input::old('Company'))) }}
+                    {{ Form::text('company', null, array('class'=>'form-control', 'id' => 'company', 'placeholder'=>'Company', 'value'=>Input::old('company'))) }}
                     @if ($errors->first('company'))
                     <span class="help-block">{{ $errors->first('company') }}</span>
                     @endif
