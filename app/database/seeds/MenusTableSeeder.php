@@ -55,6 +55,28 @@ class MenusTableSeeder extends Seeder {
                 'is_published' => true,
                 'created_at'=>new Datetime,
                 'updated_at'=>new Datetime
+            ),
+             array(
+                'title'     => 'Registration',
+                'url'       => '/registration',
+                'order'     => 5,
+                'parent_id' => 0,
+                'type'      => 'module',
+                'option'    => 'registration',
+                'is_published' => true,
+                'created_at'=>new Datetime,
+                'updated_at'=>new Datetime
+            ),
+              array(
+                'title'     => 'Login',
+                'url'       => '/login',
+                'order'     => 6,
+                'parent_id' => 0,
+                'type'      => 'module',
+                'option'    => 'login',
+                'is_published' => true,
+                'created_at'=>new Datetime,
+                'updated_at'=>new Datetime
             )
         ));
     }

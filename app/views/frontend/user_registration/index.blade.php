@@ -2,13 +2,18 @@
 @section('content')
 {{ HTML::style('assets/bootstrap/css/modern-business.css') }}
 {{ HTML::style('assets/bootstrap/css/font-awesome.min.css') }}
-
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#notification').show().delay(4000).fadeOut(700);
+    });
+</script>
 <div class="container">
+
   <div class="row">
 
             <div class="col-lg-2 col-md2">
                 <h3><i class="icon-ok-circle"></i> Beautifully Simplistic</h3>
-                <p>Aenean egestas velit vitae nibh elementum, ac faucibus risus varius. Duis pellentesque mollis semper. Etiam semper, neque sed dapibus pharetra, neque orci lacinia enim, quis sodales felis dui eget tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas varius at massa eu fringilla.
+                <p>asdassd egestas velit vitae nibh elementum, ac faucibus risus varius. Duis pellentesque mollis semper. Etiam semper, neque sed dapibus pharetra, neque orci lacinia enim, quis sodales felis dui eget tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas varius at massa eu fringilla.
                 </p>
             </div>
 
@@ -17,14 +22,15 @@
         <div class="panel-heading">
             <h3 class="panel-title">Register</h3>
         </div>
-        <div class="panel-body">            
+        <div class="panel-body">
+         {{ Notification::showAll() }}
             <br>
             <br>
             <br>
          
 
             {{ Form::open(array('url' => URL::to('register'),'method'=>'POST')) }}
-
+            
             <!-- First Name -->
             <div class="control-group {{ $errors->has('first-name') ? 'has-error' : '' }}">
                 <label class="control-label" for="first-name">First Name</label>
@@ -98,7 +104,7 @@
                 <label class="control-label" for="year-graduated">Year Graduated</label>
 
                 <div class="controls">
-                  <input type="date" class="form-control" name="year_graduated" placeholder="Year Graduated" value="{{Input::old('year-graduated')}}">
+                  <input type="date" class="form-control" name="year_graduated" placeholder="Year Graduated" value="{{Input::old('year_graduated')}}">
                     @if ($errors->first('year-graduated'))
                     <span class="help-block">{{ $errors->first('year-graduated') }}</span>
                     @endif

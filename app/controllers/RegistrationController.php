@@ -19,14 +19,14 @@ class RegistrationController extends BaseController {
             'last-name'        => Input::get('last_name'),
             'email'            => Input::get('email'),
             'gender'           => Input::get('gender'),
-            'birth-date'	   => Input::get('birth_date'),
+            'birth-date'	     => Input::get('birth_date'),
             'course'           => Input::get('course'),
             'year-graduated'   => Input::get('year_graduated'),
-            'civil-stat'	   => Input::get('civil_stat'),
-            'address'		   => Input::get('address'),
-            'company'		   => Input::get('company'),
+            'civil-stat'	     => Input::get('civil_stat'),
+            'address'		       => Input::get('address'),
+            'company'		       => Input::get('company'),
             'company-address'  => Input::get('company_address'),
-            'job-nature'	   => Input::get('job_nature'),
+            'job-nature'	     => Input::get('job_nature'),
             'password'         => Input::get('password'),
             'confirm-password' => Input::get('confirm_password')
         );
@@ -38,14 +38,14 @@ class RegistrationController extends BaseController {
             'middle-name'      => 'required|min:3',
             'email'            => 'required|email|unique:users,email',
             'gender'           => 'required',
-            'birth-date'	   => 'required',
+            'birth-date'	     => 'required',
             'course'           => 'required|min:5',
             'year-graduated'   => 'required',
-            'civil-stat'	   => 'required|min:3',
-            'address'		   => 'required|min:3',
-            'company'		   => 'required|min:3',
+            'civil-stat'	     => 'required|min:3',
+            'address'		       => 'required|min:3',
+            'company'		       => 'required|min:3',
             'company-address'  => 'required|min:3',
-            'job-nature'	   => 'required|min:3',
+            'job-nature'	     => 'required|min:3',
             'password'         => 'required|min:4',
             'confirm-password' => 'required|same:password'
         );
@@ -71,7 +71,22 @@ class RegistrationController extends BaseController {
             'activated'  => 0
         ));
 
-         
+         $user_info=new UserInfo;
+         $user_info->gender            =     $formData['gender'];
+         $user_info->birth_date        =     $formData['birth-date'];
+         $user_info->year_graduated    =     $formData['year-graduated'];
+         $user_info->course            =     $formData['course'];
+         $user_info->civil_stat        =     $formData['civil-stat'];
+         $user_info->address           =     $formData['address'];       
+         $user_info->company           =     $formData['company'];
+         $user_info->company_address   =     $formData['company-address'];
+         $user_info->job_nature        =     $formData['job-nature'];
+         $user_info->save();
+
+
+          Notification::success('Successfully Registered to Alumni');
+          return Redirect::back();
+
 
           //save to user_info table
 

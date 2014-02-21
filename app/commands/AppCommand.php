@@ -67,6 +67,7 @@ class AppCommand extends Command {
         Schema::dropIfExists('users');
         Schema::dropIfExists('users_groups');
         Schema::dropIfExists('menus');
+        Schema::dropIfExists('users_info');
 
         $this->comment('=====================================');
         $this->comment('');
@@ -239,6 +240,22 @@ class AppCommand extends Command {
                 'name'        => 'Admin',
                 'permissions' => array(
                     'admin' => 1,
+                )
+            ));
+
+            // Show the success message.
+            $this->comment('');
+            $this->info('Admin group created successfully.');
+        } catch (Cartalyst\Sentry\Groups\GroupExistsException $e) {
+            $this->error('Group already exists.');
+        }
+
+         try {
+            // Create the admin group
+            $group2 = Sentry::getGroupProvider()->create(array(
+                'name'        => 'User',
+                'permissions' => array(
+                    'user' => 1,
                 )
             ));
 

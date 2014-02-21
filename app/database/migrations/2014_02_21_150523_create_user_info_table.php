@@ -17,14 +17,14 @@ class CreateUserInfoTable extends Migration {
 
             $table->increments('id');
             $table->string('gender');
-            $table->date('birthdate');
-            $table->date('yeargraduated');    
+            $table->date('birth_date');
+            $table->date('year_graduated');    
             $table->string('course');      
-            $table->string('civil-stat');
+            $table->string('civil_stat');
             $table->string('address');
             $table->string('company');             
-           	$table->string('company-address');
-           	$table->string('job-nature');
+           	$table->string('company_address');
+           	$table->string('job_nature');
             $table->timestamps();
         });
 	}

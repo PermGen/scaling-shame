@@ -42,21 +42,33 @@ Route::group((Config::get('sfcms')['cache']) ? array('before' => 'cache.fetch', 
     // search
     Route::get('/search', ['as'=>'admin.search', 'uses'=>'SearchController@index']);
 
-   
-    //login
-    Route::get('login',array('as'=>'login','uses'=>'LoginController@index'));
+    // user profile
 
+   Route::group(array('before'=>'authuser'),function(){
+
+
+     Route::get('/userprofile',array('uses'=>'UserProfileController@showindex'));
+   });
+
+   
 });
 
  //registration
     Route::get('/registration',array('as' =>'registration','uses'=>'RegistrationController@index'));
 
+//login
+Route::get('/login',array('as'=>'login','uses'=>'LoginController@index'));
+
 
 Route::post('/contact', array('as' => 'dashboard.contact.post', 'uses' => 'FormPostController@postContact'), array('before' => 'csrf'));
 
 // register
-
 Route::post('register',array('uses'=>'RegistrationController@store'));
+
+// login
+Route::post('signin',array('uses'=>'LoginController@postLogin'));
+
+//
 /*
 |--------------------------------------------------------------------------
 | Backend Routes

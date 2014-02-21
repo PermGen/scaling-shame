@@ -23,7 +23,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h5 class="text-center"><b>Log In</b></h5>
-                    {{ Form::open(array('class' => 'form-signup', 'id' => 'form-signin')) }}
+                    {{ Form::open(array('url'=>URL::to('signin'),'method'=>'post','class' => 'form-signup', 'id' => 'form-signin')) }}
 
                     @if ($errors->has('login'))
                     <div class="alert alert-danger">
