@@ -86,7 +86,7 @@
                 <label class="control-label" for="birth-date">Birth Date</label>
 
                 <div class="controls">
-                    <input type="date"  class="form-control" name="birth_date" placeholder="Birth Date">
+                    <input type="date"  class="form-control" name="birth_date" placeholder="Birth Date" value="{{Input::old('birth_date')}}">
                     @if ($errors->first('birth-date'))
                     <span class="help-block">{{ $errors->first('birth-date') }}</span>
                     @endif
@@ -98,9 +98,22 @@
                 <label class="control-label" for="year-graduated">Year Graduated</label>
 
                 <div class="controls">
-                  <input type="date" class="form-control" name="year_graduated" placeholder="Year Graduated">
+                  <input type="date" class="form-control" name="year_graduated" placeholder="Year Graduated" value="{{Input::old('year-graduated')}}">
                     @if ($errors->first('year-graduated'))
                     <span class="help-block">{{ $errors->first('year-graduated') }}</span>
+                    @endif
+                </div>
+            </div>
+            <br>
+
+              <!-- Course -->
+            <div class="control-group {{ $errors->has('course') ? 'has-error' : '' }}">
+                <label class="control-label" for="year-graduated">Course</label>
+
+                <div class="controls">
+                    {{ Form::text('course', null, array('class'=>'form-control', 'id' => 'course', 'placeholder'=>'Course', 'value'=>Input::old('course'))) }}
+                    @if ($errors->first('course'))
+                    <span class="help-block">{{ $errors->first('course') }}</span>
                     @endif
                 </div>
             </div>
