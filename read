@@ -1,0 +1,22 @@
+non related sql
+
+
+Select distinct title from users;
+
+Select dep.department_name,d.division_name,us.first_name,us.last_name from users us left join department dep 
+on us.department_id=dep.department_id 
+ left join division d  on dep.division_id=d.division_id
+
+
+
+
+Select dep.department_name,d.division_name,us.first_name,us.last_name from users us left join department dep 
+on us.department_id=dep.department_id 
+ left join division d  on dep.division_id=d.division_id
+
+
+
+
+
+
+
