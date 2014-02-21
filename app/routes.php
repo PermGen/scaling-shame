@@ -6,10 +6,10 @@
 |--------------------------------------------------------------------------
 */
 
+    Route::get('/', ['as' => 'dashboard', 'uses' => 'HomeController@index']);
 Route::group((Config::get('sfcms')['cache']) ? array('before' => 'cache.fetch', 'after' => 'cache.put') : array(), function () {
 
     // frontend dashboard
-    Route::get('/', ['as' => 'dashboard', 'uses' => 'HomeController@index']);
 
     // article
     Route::get('/article', array('as' => 'dashboard.article', 'uses' => 'ArticleController@index'));
@@ -58,7 +58,7 @@ Route::group((Config::get('sfcms')['cache']) ? array('before' => 'cache.fetch', 
 
 //login
 Route::get('/login',array('as'=>'login','uses'=>'LoginController@index'));
-
+Route::get('/logout',array('uses'=>'LoginController@getLogout'));
 
 Route::post('/contact', array('as' => 'dashboard.contact.post', 'uses' => 'FormPostController@postContact'), array('before' => 'csrf'));
 

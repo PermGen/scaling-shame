@@ -40,6 +40,7 @@ class LoginController extends BaseController {
 
 
     public function getLogout(){
-    		Auth::logout();
+    		Sentry::logout();
+            return Redirect::to('/');
     }
 }

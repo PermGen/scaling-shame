@@ -11,7 +11,23 @@
         </div>
 
         <div id="nav-main" class="collapse navbar-collapse navbar-ex1-collapse">
-           {{ $menus }}
+          <ul class=" nav navbar-nav navbar-right ">
+                            <li class="menu-item ">
+                                <a href="{{URL::to('/')}}">Home</a>
+                            </li><li class="menu-item ">
+                                <a href="{{URL::to('/news')}}">News</a>
+                            </li><li class="menu-item ">
+                                <a href="{{URL::to('/article')}}">Blog</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{URL::to('/contact')}}">Contact</a>
+                            </li>
+                             <li class="menu-item">
+                                <a href="{{URL::to('/logout')}}">Logout</a>
+                            </li>
+                           
+        </ul>
+           
            <div class="col-xs-5 col-sm-3 pull-right">
                 <form action={{ url('/search') }} method="GET" class="navbar-form" role="search">
                     <div class="input-group">
