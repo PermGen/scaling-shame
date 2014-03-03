@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder {
         $this->call('PhotoGalleriesTableSeeder');
         $this->call('SettingsTableSeeder');
     	$this->call('MenusTableSeeder');
+        $this->call('CollegeCourseTableSeeder');
 	}
 }
