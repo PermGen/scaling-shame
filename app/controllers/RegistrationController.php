@@ -1,15 +1,16 @@
 <?php 
 
-
-
-
 class RegistrationController extends BaseController {
 
     
     public function index() {
+        $college_data=CollegeCourse::all();
+     
+       
 
-        
-        return View::make('frontend.user_registration.index');
+        return View::make('frontend.user_registration.index')
+        ->with('college_data',$college_data);
+
     }
 
     public function store(){

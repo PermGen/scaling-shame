@@ -117,7 +117,11 @@
                 <label class="control-label" for="year-graduated">Course</label>
 
                 <div class="controls">
-                    {{ Form::text('course', null, array('class'=>'form-control', 'id' => 'course', 'placeholder'=>'Course', 'value'=>Input::old('course'))) }}
+                  <select name="course" class="form-control">
+                    @foreach($college_data as $data)
+                        <option value="{{$data->course}}">{{$data->course}}</option>
+                    @endforeach
+                  </select>
                     @if ($errors->first('course'))
                     <span class="help-block">{{ $errors->first('course') }}</span>
                     @endif
@@ -129,8 +133,13 @@
             <div class="control-group {{ $errors->has('civil-stat') ? 'has-error' : '' }}">
                 <label class="control-label" for="civil-stat">Civil Status</label>
 
-                <div class="controls">
-                    {{ Form::text('civil_stat', null, array('class'=>'form-control', 'id' => 'civil_stat', 'placeholder'=>'Civil Status', 'value'=>Input::old('civil_stat'))) }}
+                <div class="controls">                   
+                    <select name="civil_stat" class="form-control">
+                        <option value="SINGLE">SINGLE</option>
+                        <option value="WIDOWED">WIDOWED</option>
+                        <option value="MARRIED">MARRIED</option>
+                    </select>
+
                     @if ($errors->first('civil-stat'))
                     <span class="help-block">{{ $errors->first('civil_stat') }}</span>
                     @endif

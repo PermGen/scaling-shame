@@ -9,9 +9,9 @@
             <a href="#"><strong><i class="glyphicon glyphicon-briefcase"></i> Quick Shortcuts</strong></a>
             <hr>
             <ul class="nav nav-pills nav-stacked">
-                <li><a href="{{ route('admin.form-post.index') }}"><i class="glyphicon glyphicon-envelope"></i> Inbox</a></li>
-                <li><a href="{{ route('admin.log') }}"><i class="glyphicon glyphicon-tasks"></i> Logs</a></li>
-                <li><a href="{{ route('admin.settings') }}"><i class="glyphicon glyphicon-cog"></i> Settings</a></li>
+                <li><a href=""><i class="glyphicon glyphicon-envelope"></i> Inbox</a></li>
+                <li><a href=""><i class="glyphicon glyphicon-tasks"></i> Post</a></li>                
+                <li><a href=""><i class="glyphicon glyphicon-cog"></i> Settings</a></li>
                 <li><a href="#"><i class="glyphicon glyphicon-plus"></i> Advanced</a></li>
             </ul>
             <hr>
