@@ -1,4 +1,8 @@
-<?php $count = count($images); ?>
+<?php 
+
+//$count = count($images);
+$count=0;
+?>
 <!-- slider start -->
 <div id="myCarousel" class="carousel slide">
     <ol class="carousel-indicators">
@@ -7,14 +11,14 @@
         @endfor
     </ol>
     <div class="carousel-inner">
-        @for($i=0; $i < $count; $i++)
-        <div class="item {{ ($i == 0) ? 'active' : '' }}">
-            <div class="fill"><img src="{{ url($images[$i]['path']) }}" /></div>
+       <div class="item {{ ($i == 0) ? 'active' : '' }}">
+        <div class="fill">
+            <center><img class="img-responsive" src="{{asset('assets/images/logo1.jpg')}}" /></center>
+        </div>
             <div class="carousel-caption">
                 <h1></h1>
             </div>
         </div>
-        @endfor
     </div>
 
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">

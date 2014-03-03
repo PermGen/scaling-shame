@@ -21,17 +21,7 @@
            
              <hr>
               <div class="row">
-                <div class="col-xs-6 col-md-12">
                     
-                    <a href="{{ route('admin.news.index') }}" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-book"></span> <br/>News</a>
-                    <a href="{{ route('admin.article.index') }}" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-book"></span> <br/>Article</a>
-                  
-                    <a href="{{ route('admin.photo_gallery.index') }}" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-picture"></span> <br/>Gallery</a>
-                   
-                   
-                    <a href="{{ route('admin.form-post.index') }}" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-envelope"></span> <br/>Inbox</a>
-                   
-                </div>
                 </div>
              <br>
              <br>

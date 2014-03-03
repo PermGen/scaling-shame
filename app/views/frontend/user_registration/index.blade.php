@@ -232,6 +232,19 @@
             </div>
             <br>
 
+             <!-- Id number -->
+            <div class="control-group {{ $errors->has('id-number') ? 'has-error' : '' }}">
+                <label class="control-label" for="id-number">Student ID Number</label>
+
+                <div class="controls">
+                    {{ Form::text('id_number', null,array('class'=>'form-control', 'id' => 'id_number', 'placeholder'=>'Student Number', 'value'=>Input::old('id_number'))) }}
+                    @if ($errors->first('id-number'))
+                    <span class="help-block">{{ $errors->first('id-number') }}</span>
+                    @endif
+                </div>
+            </div>
+            <br>
+
                <div class="control-group">
                 
                 <div class="controls">

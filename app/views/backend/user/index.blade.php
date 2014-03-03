@@ -30,6 +30,7 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Joined</th>
+                        <th>Account Status</th>
                         <th>Last Login</th>
                         <th>Action</th>
                     </tr>
@@ -40,6 +41,7 @@
                         <td> {{ link_to_route( 'admin.user.show', $user->first_name . " " . $user->last_name, $user->id, array( 'class' => 'btn btn-link btn-xs' )) }}
                         <td>{{{ $user->email }}}</td>
                         <td>{{{ $user->created_at }}}</td>
+                        <td>{{  $user->activated==1?'<span class="label label-primary">Activated</span>':'<span class="label label-warning">Not Activated</span>'}}</td>
                         <td>{{{ $user->last_login }}}</td>
                         <td>                         
                             <div class="btn-group">
@@ -52,7 +54,7 @@
                                         <a href="{{ URL::route('admin.user.show', array($user->id)) }}">
                                             <span class="glyphicon glyphicon-eye-open"></span>&nbsp;Show User
                                         </a>
-                                    </li>
+                                    </li>                                     
                                     <li>
                                         <a href="{{ URL::route('admin.user.edit', array($user->id)) }}">
                                             <span class="glyphicon glyphicon-edit"></span>&nbsp;Edit User

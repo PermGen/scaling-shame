@@ -28,7 +28,9 @@ class RegistrationController extends BaseController {
             'company-address'  => Input::get('company_address'),
             'job-nature'	     => Input::get('job_nature'),
             'password'         => Input::get('password'),
-            'confirm-password' => Input::get('confirm_password')
+            'confirm-password' => Input::get('confirm_password'),
+            'id-number'        => Input::get('id_number')
+
         );
 
 
@@ -47,7 +49,8 @@ class RegistrationController extends BaseController {
             'company-address'  => 'required|min:3',
             'job-nature'	     => 'required|min:3',
             'password'         => 'required|min:4',
-            'confirm-password' => 'required|same:password'
+            'confirm-password' => 'required|same:password',
+            'id-number'        => 'required|unique:users_info,id_number'
         );
 
 
@@ -81,6 +84,7 @@ class RegistrationController extends BaseController {
          $user_info->company           =     $formData['company'];
          $user_info->company_address   =     $formData['company-address'];
          $user_info->job_nature        =     $formData['job-nature'];
+         $user_info->id_number         =     $formData['id-number'];
          $user_info->save();
 
 

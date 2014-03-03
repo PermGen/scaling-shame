@@ -6,23 +6,14 @@
             <h3 class="panel-title">{{ $user->first_name . ' ' . $user->last_name }} Profile</h3>
         </div>
         <div class="panel-body">
-               {{ Notification::showAll() }}
             <div class="pull-left">
                 <div class="btn-toolbar">
                     <a href="{{ url('admin/user') }}"
                        class="btn btn-primary">
                         <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Back
                     </a>
+                    <button class="btn-success">ACTIVATE</button>
                 </div>
-                @if($user->activated==0)
-                <br/>
-                    <form action="{{URL::to('admin/user/activate')}}" method="post">
-                        <button class="btn btn-info" name="activate" value="{{$user->id}}">Activate</button>
-
-                    </form>
-                @endif
-
-
             </div>
             <br>
             <br>

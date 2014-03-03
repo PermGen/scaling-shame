@@ -16,10 +16,10 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
           <div class="item active">
-            <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
-            <div class="carousel-caption">
+            <div class="fill" style="background-image:url('{{asset('assets/images/logo1.jpg')}}');"></div>
+           <!--  <div class="carousel-caption">
               <h1>Modern Business - A Bootstrap 3 Template</h1>
-            </div>
+            </div> -->
           </div>
           <div class="item">
             <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
@@ -48,7 +48,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-4">
                 <h3><i class="icon-ok-circle"></i> Beautifully Simplistic</h3>
-                <p>Aenean egestas velit vitae nibh elementum, ac faucibus risus varius. Duis pellentesque mollis semper. Etiam semper, neque sed dapibus pharetra, neque orci lacinia enim, quis sodales felis dui eget tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas varius at massa eu fringilla.
+                <p>Aerdtnean egestas velit vitae nibh elementum, ac faucibus risus varius. Duis pellentesque mollis semper. Etiam semper, neque sed dapibus pharetra, neque orci lacinia enim, quis sodales felis dui eget tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas varius at massa eu fringilla.
                 </p>
             </div>
             <div class="col-lg-4 col-md-4">

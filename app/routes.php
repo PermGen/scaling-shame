@@ -7,7 +7,7 @@
 */
 
     Route::get('/', ['as' => 'dashboard', 'uses' => 'HomeController@index']);
-Route::group((Config::get('sfcms')['cache']) ? array('before' => 'cache.fetch', 'after' => 'cache.put') : array(), function () {
+    Route::group((Config::get('sfcms')['cache']) ? array('before' => 'cache.fetch', 'after' => 'cache.put') : array(), function () {
 
     // frontend dashboard
 
@@ -54,7 +54,7 @@ Route::group((Config::get('sfcms')['cache']) ? array('before' => 'cache.fetch', 
 });
 
  //registration
-    Route::get('/registration',array('as' =>'registration','uses'=>'RegistrationController@index'));
+Route::get('/registration',array('as' =>'registration','uses'=>'RegistrationController@index'));
 
 //login
 Route::get('/login',array('as'=>'login','uses'=>'LoginController@index'));
@@ -87,6 +87,28 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'App\Controllers\Admin', 
     Route::resource('user', 'UserController');
     Route::get('user/{id}/delete', array('as' => 'admin.user.delete', 'uses' => 'UserController@confirmDestroy'))
         ->where('id', '[0-9]+');
+    Route::post('user/activate',function(){
+
+        $id=Input::get('activate');
+     
+        $user = Sentry::findUserById($id);      
+        
+        $user->activated=1;
+        $user->save();
+        $formdata['firstName']=$user->first_name;
+
+            Mail::send('emails.contact-form.email', $formdata, function ($message) {
+             $user = Sentry::findUserById(Input::get('activate'));  
+            $message->from('blacksilent9.8@gmail.com', 'ADMIN');
+            $message->to($user->email)->subject('Account Activation for Alumni Tracking');
+        });
+
+        Notification::success('Account Activated');
+        return Redirect::back();
+
+
+    });
+
 
     // blog
     Route::resource('article', 'ArticleController');
