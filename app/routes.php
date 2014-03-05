@@ -44,14 +44,20 @@
 
     // user profile
 
-   Route::group(array('before'=>'authuser'),function(){
 
-
-     Route::get('/userprofile',array('uses'=>'UserProfileController@showindex'));
-   });
 
    
 });
+
+ Route::group(array('before'=>'authuser'),function(){
+
+     Route::get('/userprofile',array('uses'=>'UserProfileController@showindex'));
+     Route::get('/postArticle',array('uses'=>'UserArticleController@showindex'));
+     Route::get('articleList',array('uses'=>'UserArticleController@showList'));
+
+     Route::post('/createArticle',array('uses'=>'UserArticleController@postArticle'));
+   });
+
 
  //registration
 Route::get('/registration',array('as' =>'registration','uses'=>'RegistrationController@index'));
