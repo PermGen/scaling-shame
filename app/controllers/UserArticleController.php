@@ -22,8 +22,13 @@
 
 		
 		public function showindex(){
-			$categories=$this->category->listsperUser();		
-			return View::make('frontend.userprofile.post', compact('categories'));
+			$categories=$this->category->listsperUser();
+			$messages=Message::where('from','=',Sentry::getUser()->id)
+			->where('is_seen','=','0')
+			->orderBy('is_seen')
+			->get();		
+			return View::make('frontend.userprofile.post', compact('categories'))->
+			with('messages',$messages);
 	
 		}
 
@@ -40,6 +45,12 @@
 
 		public function showCreateCategory(){
 		return View::make('frontend.userprofile.createcategory');
+		}
+
+		public function showConfirmDelete($id){
+         $category = $this->category->find($id);
+         
+		return View::make('frontend.userprofile.deleteArticle',compact('category'));
 		}
 	
 		
@@ -63,6 +74,46 @@
             return Redirect::back()->withInput()->withErrors($e->getErrors());
        		 }
 		}
+
+		public function editArticle($id) {
+
+        $article = $this->article->find($id);
+        $tags = null;
+
+        foreach ($article->tags as $tag) {
+            $tags .= ',' . $tag->name;
+        }
+
+        $tags = substr($tags, 1);
+        $categories = $this->category->lists();
+        return View::make('frontend.userprofile.articleEdit', compact('article', 'tags', 'categories'));
+        }
+
+        public function updateArticle($id) {
+
+        try {
+            $this->article->update($id, Input::all());
+            Notification::success('Article was successfully updated');
+            return Redirect::to('articleList');
+        } catch (ValidationException $e) {
+
+            return Redirect::back()->withInput()->withErrors($e->getErrors());
+        }
+    }
+
+        public function deleteArticle($id){
+         $this->article->destroy($id);
+        Notification::success('Article was successfully deleted');
+        return Redirect::to('/');
+        }
+
+        public function showArticle($id){
+
+        $article = $this->article->find($id);
+        return View::make('frontend.userprofile.myarticle', compact('article'));
+        }
+    
+
 
 	}
 

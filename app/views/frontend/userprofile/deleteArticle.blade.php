@@ -13,13 +13,8 @@
             <a href="#"><strong><i class="glyphicon glyphicon-briefcase"></i> Quick Shortcuts</strong></a>
             <hr>
             <ul class="nav nav-pills nav-stacked">
-                <li><a href="{{URL::to('/mymessages')}}"><i class="glyphicon glyphicon-envelope"></i> Inbox 
-                        @if(count($messages)!=0)
-                            <span class="label label-info">{{count($messages)}}</span>
-                        @endif
-
-                </a></li>
-                <li><a href="{{URL::to('/articleList')}}"><i class="glyphicon glyphicon-tasks"></i> Post</a></li>                
+                <li><a href=""><i class="glyphicon glyphicon-envelope"></i> Inbox</a></li>
+                <li><a href=""><i class="glyphicon glyphicon-tasks"></i> Post</a></li>                
                 <li><a href=""><i class="glyphicon glyphicon-cog"></i> Settings</a></li>
                 <li><a href="#"><i class="glyphicon glyphicon-plus"></i> Advanced</a></li>
             </ul>
@@ -30,7 +25,20 @@
            
              <hr>
               <div class="row">
-                     {{ Notification::showAll() }}
+ {{ Notification::showAll() }}
+
+  {{ Form::open( array( 'url' => url( 'deleteArticle', $category->id ) ) ) }}
+    {{ Form::hidden( '_method', 'DELETE' ) }}
+    <div class="alert alert-warning">
+        <div class="pull-left"><b> Be Careful!</b> Are you sure you want to delete <b>{{{ $category->title }}} and related articles </b> ?
+        </div>
+        <div class="pull-right">
+            {{ Form::submit( 'Yes', array( 'class' => 'btn btn-danger' ) ) }}
+            {{ link_to( URL::previous(), 'No', array( 'class' => 'btn btn-primary' ) ) }}
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    {{ Form::close() }}
                 </div>
              <br>
              <br>

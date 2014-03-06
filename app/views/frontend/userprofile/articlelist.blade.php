@@ -59,7 +59,7 @@
                     <a href="{{ URL::to('/postArticle') }}" class="btn btn-primary">
                         <span class="glyphicon glyphicon-plus"></span>&nbsp;New Article
                     </a>
-                    <a href="{{ URL::route('admin.category.create') }}" class="btn btn-primary">
+                    <a href="{{ URL::to('/categoryList') }}" class="btn btn-primary">
                         <span class="glyphicon glyphicon-plus"></span>&nbsp;New Category
                     </a>
                 </div>
@@ -93,18 +93,18 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ URL::route('admin.article.show', array($article->id)) }}">
+                                        <a href="{{url('/viewmyarticle',$article->id)}}">
                                             <span class="glyphicon glyphicon-eye-open"></span>&nbsp;Show Article
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ URL::route('admin.article.edit', array($article->id)) }}">
+                                        <a href="{{ url('/myarticle', $article->id) }}">
                                             <span class="glyphicon glyphicon-edit"></span>&nbsp;Edit Article
                                         </a>
                                     </li>
                                     <li class="divider"></li>
                                     <li>
-                                        <a href="{{ URL::route('admin.article.delete', array($article->id)) }}">
+                                        <a href="{{url('/deleteArticleConfirm', $article->id) }}">
                                             <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Delete Article
                                         </a>
                                     </li>

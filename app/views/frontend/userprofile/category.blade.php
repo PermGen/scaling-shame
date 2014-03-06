@@ -21,7 +21,7 @@
            
             
               <div class="row">
-                 <script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function () {
         $('#notification').show().delay(4000).fadeOut(700);
     });
@@ -35,7 +35,7 @@
         <div class="panel-body">
             <div class="pull-left">
                 <div class="btn-toolbar">
-                    <a href="{{ URL::route('admin.category.create') }}" class="btn btn-primary">
+                    <a href="{{ URL::to('/createCategory') }}" class="btn btn-primary">
                         <span class="glyphicon glyphicon-plus"></span>&nbsp;New Category
                     </a>
                 </div>

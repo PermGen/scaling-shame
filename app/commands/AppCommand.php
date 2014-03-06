@@ -68,6 +68,7 @@ class AppCommand extends Command {
         Schema::dropIfExists('users_groups');
         Schema::dropIfExists('menus');
         Schema::dropIfExists('users_info');
+        Schema::dropIfExists('messages_table');
 
         $this->comment('=====================================');
         $this->comment('');
