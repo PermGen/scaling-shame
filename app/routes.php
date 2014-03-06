@@ -53,9 +53,12 @@
 
      Route::get('/userprofile',array('uses'=>'UserProfileController@showindex'));
      Route::get('/postArticle',array('uses'=>'UserArticleController@showindex'));
-     Route::get('articleList',array('uses'=>'UserArticleController@showList'));
-
+     Route::get('/articleList',array('uses'=>'UserArticleController@showArticleList'));
+     Route::get('/categoryList',array('uses'=>'UserArticleController@showCategoryList'));
+     Route::get('/createCategory',array('uses'=>'UserArticleController@showCreateCategory'));
+    
      Route::post('/createArticle',array('uses'=>'UserArticleController@postArticle'));
+     Route::post('/storeCategory',array('uses'=>'UserArticleController@postStoreCategory'));
    });
 
 

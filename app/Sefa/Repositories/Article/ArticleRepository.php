@@ -45,11 +45,7 @@ class ArticleRepository extends Validator implements BaseRepositoryInterface {
         return $this->article->get()->lists('title', 'id');
     }
 
-     public function listsperUser() {
-
-        return $this->article->get()->lists('title', 'id')
-        ->where('id','=',Sentry::getUser()->id);
-    }
+    
 
 
     public function paginate($perPage = null) {

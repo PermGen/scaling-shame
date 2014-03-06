@@ -1,6 +1,7 @@
 <?php namespace Sefa\Repositories\Category;
 
 use Config;
+use Sentry;
 use Category;
 use Sefa\Repositories\BaseRepositoryInterface as BaseRepositoryInterface;
 use Sefa\Exceptions\Validation\ValidationException;
@@ -42,6 +43,12 @@ class CategoryRepository extends Validator implements BaseRepositoryInterface {
         return $this->category->lists('title', 'id');
     }
 
+     public function listsperUser() {
+
+        return $this->category->where('id','=',Sentry::getUser()->id)->get()->lists('title', 'id');
+        
+    }
+
     public function find($id) {
 
         return $this->category->findOrFail($id);
@@ -49,7 +56,8 @@ class CategoryRepository extends Validator implements BaseRepositoryInterface {
 
     public function getArticlesByTitle($title) {
 
-        return $this->category->where('title', '=', $title)->first()->articles()->paginate($this->perPage);
+        return $this->category->
+        where('title', '=', $title)->first()->articles()->paginate($this->perPage);
     }
 
     public function create($attributes) {
