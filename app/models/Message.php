@@ -5,4 +5,5 @@ class Message extends Eloquent {
 
 	public static $rules = array();
 	public $table= "messages_table";
+	protected $primaryKey="message_id";
 }

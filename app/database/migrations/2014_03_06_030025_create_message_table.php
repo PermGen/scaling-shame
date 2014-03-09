@@ -16,8 +16,8 @@ class CreateMessageTable extends Migration {
 		 Schema::create('messages_table', function ($table) {
 
             $table->increments('message_id');
-            $table->string('from');   
-            $table->string('to');        
+            $table->string('user_from');   
+            $table->string('user_to');        
             $table->string('message');
             $table->boolean('is_seen')->default(false);
             $table->timestamps();

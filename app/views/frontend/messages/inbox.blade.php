@@ -33,13 +33,16 @@
 
         </div>
         <div class="panel-body">
-            <br>
+         <a class="btn btn-primary" href="{{URL::to('/createNewMessage')}}">Create New Message</a>
+            <br><br>
 
             <div class="table-responsive">
+
+
                          <table class="table table-striped">
                              <thead>
                                  <tr>
-                                   <th>from</th>
+                                   <th>From</th>
                                    <th>Messages</th>  
                                    <th>Date</th>
                                    <th>Action</th>
@@ -47,10 +50,9 @@
                              </thead>
                              <tbody>
                                @foreach($messages as $message)
-                                <tr>
-                                    <td>{{$message->from}}</td>
-                                    <td>{{$message->message}}</td>
-                                    <td>{{$message->from}}</td>
+                                <tr class="{{$message->is_seen==1? 'active': 'success'}}">
+                                    <td>{{$message->user_from}}</td>
+                                    <td>{{$message->message}}</td>                                    
                                     <td>{{$message->created_at}}</td>
                                     <td>
                                           <div class="btn-group">
@@ -60,18 +62,18 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{url('/viewMessage',$message->id)}}">
+                                        <a href="{{url('/viewmymessage',$message->message_id)}}">
                                             <span class="glyphicon glyphicon-eye-open"></span>&nbsp;View Message
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('/replyMessage',$message->id) }}">
+                                        <a href="{{ url('/replyMessage',$message->message_id) }}">
                                             <span class="glyphicon glyphicon-edit"></span>&nbsp;Reply
                                         </a>
                                     </li>
                                     <li class="divider"></li>
                                     <li>
-                                        <a href="{{url('/deleteMessage', $message->id) }}">
+                                        <a href="{{url('/deleteMessage', $message->message_id) }}">
                                             <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Delete Message
                                         </a>
                                     </li>

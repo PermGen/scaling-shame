@@ -47,17 +47,22 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-4">
-                <h3><i class="icon-ok-circle"></i> Beautifully Simplistic</h3>
-                <p>Aerdtnean egestas velit vitae nibh elementum, ac faucibus risus varius. Duis pellentesque mollis semper. Etiam semper, neque sed dapibus pharetra, neque orci lacinia enim, quis sodales felis dui eget tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas varius at massa eu fringilla.
+                <h3><i class="icon-ok-circle"></i> INDUSTRY PARTNERS RECOGNITION DAY: Celebrating Old and New Partnerships</h3>
+                <p>
+                  Fellowship and Camaraderie Towards Strategizing A New Education Paradigm”.  The university in its second phase of new education paradigm took advantage of the momentous affair to showcase UMak’s various prestigious partner industries and conduct Memorandum of Agreement (MOA) signing of new ones.
                 </p>
             </div>
             <div class="col-lg-4 col-md-4">
-                <h3><i class="icon-pencil"></i> Free Support & Updates</h3>
-                <p>Nunc aliquet rutrum ultricies. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris eget enim interdum arcu scelerisque suscipit. Duis porta, lectus nec commodo bibendum, libero massa tempor quam, ac ullamcorper mauris tortor nec quam. Aenean at ante vitae turpis volutpat cursus. Vestibulum sed est in risus rhoncus lacinia.</p>
+                <h3><i class="icon-pencil"></i>UMAK, UMEDFI AND BAUAN MUNICIPALITY SIGN MOA</h3>
+                <p>
+                  Signifying their common and strong belief in the value of partnership and collaboration to achieve synergy and innovation in offering and delivering capacity building programs, initiatives and interventions in education, training and research to help achieve community developmental goals and objectives, UMak President Tomas Lopez, Jr., University of Makati Educational Development Foundation, Inc. (UMEDFI) Chair Edita Chan, and the Municipality of Bauan, Batangas represented by Mayor Ryanh Dolor, signed a Memorandum of Agreement last November 15.
+                </p>
             </div>
             <div class="col-lg-4 col-md-4">
-                <h3><i class="icon-folder-open-alt"></i> Blissful Layout Options</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis eu odio a hendrerit. Vivamus urna eros, gravida vitae urna et, sollicitudin interdum est. Suspendisse potenti. Nam aliquet sed turpis quis pharetra. Maecenas sed ultricies justo. Sed sed malesuada est. Donec faucibus elit a elit vestibulum elementum. </p>
+                <h3><i class="icon-folder-open-alt"></i>ALL FIRED UP!</h3>
+                <p>
+                  Eight under-23 football teams are all set to battle for the coveted top spot of the 3rd MAKATI FOOTBALL CHALLENGE, while premier clubs, Kaya FC and Green Archers United, are raring to take on each other in the much-awaited friendly match of the VP BINAY INVITATIONAL GAMES 2013 on November 22 at the University of Makati Oval.
+                 </p>
             </div>
         </div>
     </div>

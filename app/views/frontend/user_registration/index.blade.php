@@ -12,9 +12,7 @@
   <div class="row">
 
             <div class="col-lg-2 col-md2">
-                <h3><i class="icon-ok-circle"></i> Beautifully Simplistic</h3>
-                <p>asdassd egestas velit vitae nibh elementum, ac faucibus risus varius. Duis pellentesque mollis semper. Etiam semper, neque sed dapibus pharetra, neque orci lacinia enim, quis sodales felis dui eget tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas varius at massa eu fringilla.
-                </p>
+                
             </div>
 
   <div class="col-lg-8 col-md-8" style="margin-top:20px">
@@ -266,8 +264,7 @@
     </div>
   </div>
             <div class="col-lg-2 col-md-2">
-                <h3><i class="icon-folder-open-alt"></i> Blissful Layout Options</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis eu odio a hendrerit. Vivamus urna eros, gravida vitae urna et, sollicitudin interdum est. Suspendisse potenti. Nam aliquet sed turpis quis pharetra. Maecenas sed ultricies justo. Sed sed malesuada est. Donec faucibus elit a elit vestibulum elementum. </p>
+                
             </div>
 
   </div>

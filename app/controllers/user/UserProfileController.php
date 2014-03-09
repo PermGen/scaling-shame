@@ -6,7 +6,7 @@
 	{
 			
 			public function showindex(){
-			$messages=Message::where('from','=',Sentry::getUser()->id)
+			$messages=Message::where('user_from','=',Sentry::getUser()->id)
 			->where('is_seen','=','0')
 			->orderBy('is_seen')
 			->get();

@@ -58,12 +58,20 @@
      Route::get('/createCategory',array('uses'=>'UserArticleController@showCreateCategory'));
      Route::get('/myarticle/{id}',array('uses'=>'UserArticleController@editArticle'));
      Route::get('/viewmyarticle/{id}',array('uses'=>'UserArticleController@showArticle'));
-     Route::post('/createArticle',array('uses'=>'UserArticleController@postArticle'));
-     Route::post('/storeCategory',array('uses'=>'UserArticleController@postStoreCategory'));
      Route::get('/deleteArticleConfirm/{id}',array('uses'=>'UserArticleController@showConfirmDelete'));
      Route::get('/mymessages',array('uses'=>'MessageController@showindex'));
+     Route::get('/viewmymessage/{id}',array('uses'=>'MessageController@showMessage'));
+     Route::get('/createNewMessage',array('uses'=>'MessageController@createNewMessage'));
+     Route::get('/replyMessage/{id}',array('uses'=>'MessageController@replyMessage'));
+     Route::get('/deleteMessage/{id}',array('uses'=>'MessageController@deleteMessageConfirm'));
+     Route::post('/sendMessage',array('uses'=>'MessageController@sendNewMessage'));
+     Route::post('/createArticle',array('uses'=>'UserArticleController@postArticle'));
+     Route::post('/storeCategory',array('uses'=>'UserArticleController@postStoreCategory'));
      Route::post('/updateArticle/{id}',array('uses'=>'UserArticleController@updateArticle'));
+    
      Route::delete('/deleteArticle/{id}',array('uses'=>'UserArticleController@deleteArticle'));
+     Route::delete('/deletePermMessage/{id}',array('uses'=>'MessageController@deleteMessage'));
+
 
    });
 
