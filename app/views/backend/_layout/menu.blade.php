@@ -12,14 +12,8 @@
             <ul class="nav navbar-nav">
                 <li @if(isset($active) && $active=="home") class="active" @endif><a href="{{ url('/admin') }}"><span class="glyphicon glyphicon-home"></span>Dashboard</a></li>
                 <li><a href="{{ url('/admin/menu') }}"><span class="glyphicon glyphicon-list-alt"></span>Menu</a></li>
-                <li class="dropdown {{ ((isset($active) && $active=='modules') ? 'active' : '') }}">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tint"></span>Modules <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                       <li>{{ HTML::link('/admin/news','News') }}</li>
-                       <li>{{ HTML::link('/admin/page','Pages') }}</li>
-                       <li>{{ HTML::link('/admin/photo_gallery','Photo Gallery') }}</li>
-                    </ul>
-                </li>
+                <li><a href="{{url('/admin/statistics')}}"><span class="glyphicon glyphicon-signal"></span>Statistics</a></li>
+               
                  <li class="dropdown {{ ((isset($active) && $active=='blog') ? 'active' : '') }}">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-book"></span>Blog <b class="caret"></b></a>
                     <ul class="dropdown-menu">

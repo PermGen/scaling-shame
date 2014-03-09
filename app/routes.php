@@ -190,6 +190,9 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'App\Controllers\Admin', 
     // settings
     Route::get('/settings', array('as' => 'admin.settings', 'uses' => 'SettingController@index'));
     Route::post('/settings', array('as' => 'admin.settings.save', 'uses' => 'SettingController@save'), array('before' => 'csrf'));
+  
+   //
+    Route::get('/statistics',array('as'=>'admin.statistics','uses'=>'StatisticsController@index'));
 
     // form post
     Route::resource('form-post', 'FormPostController', array('only' => array('index', 'show', 'destroy')));
@@ -251,6 +254,8 @@ Route::group(array('namespace' => 'App\Controllers\Admin'), function () {
         ->where('id', '[0-9]+');
     Route::post('admin/reset-password', array('as' => 'admin.reset.password.post', 'uses' => 'AuthController@postResetPassword'));
 });
+
+
 
 /*
 |--------------------------------------------------------------------------
